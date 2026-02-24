@@ -52,10 +52,37 @@ User.greet("Hello");
 // union : combining multiple types
 /**type alias */
 
-type IDFieldType = string | number;
-const printID=(id:IDFieldType)=>{
-    console.log("Id "+ id)
+// type IDFieldType = string | number;
+// const printID=(id:IDFieldType)=>{
+//     console.log("Id "+ id)
+// }
+
+//printID("0564e3");
+
+
+// intersection of two types
+
+interface BusinessPartner {
+  name: string;
+  creditScore: number;
 }
 
+interface UserIdentity {
+  id: number;
+  email: string;
+}
 
-printID("0564e3");
+type Employee = BusinessPartner & UserIdentity;
+
+const signContract = (employee: Employee): void => {
+  console.log(
+    "Contract signed by " + employee.name + " with email: " + employee.email
+  );
+};
+
+signContract({
+  name: "Kofi",
+  creditScore: 750,
+  id: 3452,
+  email: "kofi@example.com"
+});
