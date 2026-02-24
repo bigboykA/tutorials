@@ -57,4 +57,5 @@ const printID=(id:IDFieldType)=>{
     console.log("Id "+ id)
 }
 
+
 printID("0564e3");
