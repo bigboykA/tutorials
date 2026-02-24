@@ -27,33 +27,55 @@
 
 // generics
 
-class StorageContainer<T>{
-   private contents: T[]
+// class StorageContainer<T>{
+//    private contents: T[]
 
-   constructor(){
-        this.contents = []
-   }
+//    constructor(){
+//         this.contents = []
+//    }
 
-   addItem(item:T){
-    this.contents.push(item);
-   }
+//    addItem(item:T){
+//     this.contents.push(item);
+//    }
 
-   getItem(idx: number):T | undefined{
-        return this.contents[idx];
-   }
+//    getItem(idx: number):T | undefined{
+//         return this.contents[idx];
+//    }
+// }
+
+// const usernames = new StorageContainer<string>();
+
+// usernames.addItem("Kofi");
+// usernames.addItem("benji")
+// console.log(usernames.getItem(0));
+
+
+
+
+// const friendsCount = new StorageContainer<number>();
+
+// friendsCount.addItem(23);
+// friendsCount.addItem(678)
+// console.log(friendsCount.getItem(0));
+
+
+
+interface Employee {
+    employeeId: number;
+    startDate: Date;
+    name: string;
+    department: string
 }
 
-const usernames = new StorageContainer<string>();
+const employee: Employee = {
+    employeeId: 123,
+    startDate: new Date(),
+    name: "Kofi",
+    department: "Finance"
+};
 
-usernames.addItem("Kofi");
-usernames.addItem("benji")
-console.log(usernames.getItem(0));
+employee.name = "Rich";
 
+employee.employeeId = 455674925;
 
-
-
-const friendsCount = new StorageContainer<number>();
-
-friendsCount.addItem(23);
-friendsCount.addItem(678)
-console.log(friendsCount.getItem(0));
+console.log(employee);
